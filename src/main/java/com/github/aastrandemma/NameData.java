@@ -1,7 +1,9 @@
 package com.github.aastrandemma;
 
+import java.util.Arrays;
+
 public class NameData {
-    private static final String[] nameStorage = {"Erik Svensson"};
+    private static String[] nameStorage = {"Erik Svensson"};
 
     public static String find(final String fullName) {
         for (String name : nameStorage) {
@@ -10,5 +12,21 @@ public class NameData {
             }
         }
         return null;
+    }
+
+    public static boolean add(final String fullName) {
+        String checkFullName = find(fullName);
+        if (checkFullName == null) {
+            nameStorage = addFullNameToArray(fullName);
+        } else {
+            return false;
+        }
+        return  true;
+    }
+
+    private static String[] addFullNameToArray(String fullName) {
+        String[] newNameStorage = Arrays.copyOf(nameStorage, nameStorage.length + 1);
+        newNameStorage[newNameStorage.length - 1] = fullName;
+        return newNameStorage;
     }
 }

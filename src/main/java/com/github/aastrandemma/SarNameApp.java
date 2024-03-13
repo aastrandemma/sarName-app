@@ -33,6 +33,9 @@ public class SarNameApp {
             case 1:
                 PerformNameTasks.findFullName();
                 break;
+            case 2:
+                PerformNameTasks.addFullName();
+                break;
             default:
                 System.out.println("Invalid choice. Please enter a valid option from the menu.");
         }
