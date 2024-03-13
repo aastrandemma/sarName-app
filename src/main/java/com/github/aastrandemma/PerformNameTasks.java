@@ -3,7 +3,7 @@ package com.github.aastrandemma;
 public class PerformNameTasks {
     public static void findFullName() {
         String findName = UserData.getUserInputFullName("find");
-        String foundName = NameData.find(findName);
+        String foundName = NameRepository.find(findName);
 
         if (foundName == null) {
             System.out.println("The name " + findName + " does not exist.");
@@ -14,7 +14,7 @@ public class PerformNameTasks {
 
     public static void addFullName() {
         String addFullName = UserData.getUserInputFullName("add");
-        boolean nameAdded = NameData.add(addFullName);
+        boolean nameAdded = NameRepository.add(addFullName);
 
         if (nameAdded) {
             System.out.println("The name " + addFullName + " is added to the list.");
